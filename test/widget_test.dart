@@ -9,11 +9,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:jwt_test/main.dart';
+import 'package:jwt_test/services/config_service.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(MyApp());
+    final Map<String, dynamic> configItems = await ConfigService.getConfigItems();
+    await tester.pumpWidget(MyApp(configItems));
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

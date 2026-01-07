@@ -1,0 +1,4 @@
+{
+  "API_URL": "https://app.fynapp.local:5001",
+  "ENV": "local"
+}
